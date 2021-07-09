@@ -10,4 +10,5 @@ import java.util.List;
 public interface TestDao {
     @Select("select user_id userId,user_name userName,gender from test")
     List<User> getAllUsers();
+    //
 }

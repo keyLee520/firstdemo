@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class 整数转罗马数字 {
     public static void main(String[] args) {
-
+        //System.out.println(3999 / 1000 * 1000);
+        System.out.println(intToRoman(3999));
     }
 
     public static String intToRoman(int num) {
@@ -42,9 +43,21 @@ public class 整数转罗马数字 {
         map.put(3000, "MMM");
 
         //千位
-        int t = (num % 1000) * 1000;
+        int thousands = num / 1000 * 1000;
         //百位
+        int hundreds = num / 100 * 100 - thousands;
 
-        return "";
+        //十位
+        int tens = num / 10 * 10 -thousands-hundreds ;
+
+        //个位
+        int single = num % 10;
+
+        StringBuilder builder = new StringBuilder();
+        if (thousands != 0) builder.append(map.get(thousands));
+        if (hundreds != 0) builder.append(map.get(hundreds));
+        if (tens != 0) builder.append(map.get(tens));
+        if (single != 0) builder.append(map.get(single));
+        return builder.toString();
     }
 }

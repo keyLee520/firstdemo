@@ -51,19 +51,24 @@ public class 删除二叉搜索树中的节点 {
      */
     public static TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) return null;
-        if (key > root.val) {
-            deleteNode(root.right, key);
-        } else if (key < root.val) {
-            deleteNode(root.left, key);
-        } else {
-            if (root.right != null) {
+
+        // delete from the right subtree
+        if (key > root.val) root.right = deleteNode(root.right, key);
+            // delete from the left subtree
+        else if (key < root.val) root.left = deleteNode(root.left, key);
+            // delete the current node
+        else {
+            // the node is a leaf
+            if (root.left == null && root.right == null) root = null;
+                // the node is not a leaf and has a right child
+            else if (root.right != null) {
                 root.val = successor(root);
                 root.right = deleteNode(root.right, root.val);
-            } else if (root.left != null) {
+            }
+            // the node is not a leaf, has no right child, and has a left child
+            else {
                 root.val = predecessor(root);
                 root.left = deleteNode(root.left, root.val);
-            } else {
-                root = null;
             }
         }
         return root;

@@ -6,7 +6,7 @@ public class 三数之和 {
     static int[] newnumms;
     static Map<Integer, Integer> map1;
 
-    public static void main(String[] args) {
+    public static void main(String[] args1) {
         //System.out.println(threeSum(nums));
         // List<int[]> index = findIndex(0, 1);
         int[] nums = {-1, 0, 1};

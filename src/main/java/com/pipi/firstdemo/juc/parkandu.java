@@ -15,8 +15,6 @@ public class parkandu {
         System.out.println("t1 unpark");
         LockSupport.unpark(t1);
 
-        new Object().wait();
-
     }
 
 }

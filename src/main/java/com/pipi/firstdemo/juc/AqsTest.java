@@ -15,11 +15,19 @@ import java.util.concurrent.locks.ReentrantLock;
 public class AqsTest {
 
     public static void main(String[] args) {
-        MyLock lock = new MyLock();
+        HashMap<Strdent, Object> map = new HashMap<>();
+        Strdent s = new Strdent("張三");
 
+        Strdent s2 = new Strdent("Lis");
+        map.put(s,"8");
+        map.put(s2,"9");
+        System.out.println(map.get(s));
+
+
+
+
+      /*  MyLock lock = new MyLock();
         ReentrantLock lock1 = null;
-
-
         ExecutorService pool = Executors.newFixedThreadPool(11);
         lock1.lock();
         lock1.unlock();
@@ -35,7 +43,7 @@ public class AqsTest {
                 lock.unlock();
                 System.out.println(Thread.currentThread().getName() + "释放了锁");
             });
-        }
+        }*/
     }
 }
 

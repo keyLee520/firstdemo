@@ -6,9 +6,10 @@ public class Test1 {
 
     String dage;
 
-    public void gete() {
+    public void voidgete() {
         int x = 4;
         int y = 5;
         int i = x + y;
     }
+
 }

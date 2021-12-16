@@ -7,7 +7,7 @@ import java.util.concurrent.locks.LockSupport;
 //-XX:BiasedLockingStartupDelay=0
 //禁止偏向锁延迟
 public class syncnizedtest {
-    public static void main(String[] args) throws ClassNotFoundException, InterruptedException {
+   /* public static void main(String[] args) throws ClassNotFoundException, InterruptedException {
         Dog d = new Dog();
         final Thread t1, t2, t3;
         t1 = new Thread(() -> {
@@ -19,7 +19,7 @@ public class syncnizedtest {
         t1.start();
 
 
-/*        t2 = new Thread(() -> {
+*//*        t2 = new Thread(() -> {
             try {
                 t1.join();
             } catch (InterruptedException e) {
@@ -30,7 +30,7 @@ public class syncnizedtest {
                 System.out.println(isBiasable(d));
             }
         });
-        t2.start();*/
+        t2.start();*//*
 
 
         t3 = new Thread(() -> {
@@ -58,9 +58,9 @@ public class syncnizedtest {
             }
         });
         t4.start();
-    }
+    }*/
 
-    private static String isBiasable(Object instance) {
+    /*private static String isBiasable(Object instance) {
         if( ClassLayout.parseInstance(instance).toPrintable().contains("non-biasable")){
             return "无偏向、正常状态";
         }
@@ -78,7 +78,7 @@ public class syncnizedtest {
         }
 
         return null;
-    }
+    }*/
 
 }
 

@@ -1,6 +1,7 @@
 package com.pipi.firstdemo.juc;
 
 import java.util.Objects;
+import java.util.TreeSet;
 
 public class Strdent {
     String name;
@@ -17,5 +18,9 @@ public class Strdent {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    public static void main(String[] args) {
+
     }
 }

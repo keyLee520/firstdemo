@@ -1,0 +1,12 @@
+------------------------
+acid
+a = atomicty 原子性
+c = consistency 一致性
+i issolation 隔离性
+d 持久性
+
+-----------------------
+cap
+c 一致性（强一致性）
+a avalible 可用性
+p 分区容错性
